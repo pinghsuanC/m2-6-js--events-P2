@@ -21,10 +21,20 @@ const people = [
 
 function avgAge(peopleArr) {
   // return something
+  let total = 0;
+  peopleArr.forEach(element => {
+    let {name, age} = element;
+    // check type
+    if(typeof(age)==="number"){
+      total+=age;
+    }
+  });
+
+  return Math.round(total/peopleArr.length);
 }
 
 // 2. Do a console.log to verify your function.
-
+//console.log(avgAge(people));
 // 3. Run the test to validate: yarn test exercise-2
 
 module.exports = { avgAge, people };

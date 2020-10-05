@@ -5,10 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="style.css" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css?family=Jost:400,700&display=swap" rel="stylesheet"/>
 
     <title>Signup Form</title>
   </head>
   <body>
+    <div class="wrapper">
+      <h1>Signup Form</h1>
+      <form action="" class="inner-container">
+        <div class="name-box item">
+          <label for="full-name">Full name:</label>
+          <input type="text" id="full-name" required autocomplete="on">
+        </div>
+
+        <div class="add-box item">
+          <label for="address">Street address:</label>
+          <input type="text" id="address" required autocomplete="on">
+        </div>
+
+        <div class="email-box item">
+          <label for="e-mail">Email address:</label>
+          <input type="email" id="e-mail" required autocomplete="on">
+        </div>
+
+        <div class="tel-box item">
+          <label for="phone">Phone number:</label>
+          <input type="tel" id="phone" required autocomplete="on">
+        </div>
+
+        <div class="pass-box item">
+          <label for="password">Password:</label>
+          <input type="password" id="password" required autocomplete="on">
+        </div>
+
+        <div class="pass-cmf-box item">
+          <label for="password-cmf">Confirm Password:</label>
+          <input type="password" id="password-cmf" required autocomplete="on">
+        </div>
+
+        <div class="check-box item">
+          <input type="checkbox" id="agree" required value=0 autocomplete="on">
+          <label for="agree">I agree to the <a href="#">terms of service</a></label>
+        </div>
+
+        <footer class="btn-box item">
+          <button id="clear-btn">Clear</button>
+          <button id="submit-btn">Submit</button>
+        </footer>
+
+        <div class="error-box item" id="error-box"></div>
+
+      </form>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

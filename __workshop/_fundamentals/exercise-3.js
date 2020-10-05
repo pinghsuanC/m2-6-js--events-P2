@@ -19,10 +19,48 @@ const people = [
 
 function fullName(peopleArr) {
   // return something
+  let s = [];
+  peopleArr.forEach(element => {
+    if("name" in element){
+      let {name:{first="", middle="", last=""} = {}} = element;
+      if(first===""){       // first is empty
+        if(middle===""){  // middle is empty
+          if(last===""){  // last is empty
+            s.push("");
+          }else{          // last is not empty
+            s.push(last);
+          }
+        }else{  // middle is not empty
+          if(last===""){  // last is empty
+            s.push(`${middle} ${last}`);
+          }else{          // last is not empty
+            s.push(last);
+          }
+        }
+      }else{          // first is not empty
+        if(middle===""){  // middle is empty
+          if(last===""){  // last is empty
+            s.push("");
+          }else{          // last is not empty
+            s.push(`${first} ${last}`);
+          }
+        }else{  // middle is not empty
+          if(last===""){  // last is empty
+            s.push(`${first} ${middle}`);
+          }else{          // last is not empty
+            s.push(`${first} ${middle} ${last}`);
+          }
+        }
+      }
+    }
+  });
+  return s;
 }
 
-// 2. Do a console.log to verify your function.
+// https://medium.com/@pyrolistical/destructuring-nested-objects-9dabdd01a3b8
 
+// 2. Do a console.log to verify your function.
+//console.log(fullName(people));
 // 3. Run the test to validate: yarn test exercise-3
 
 module.exports = { fullName, people };

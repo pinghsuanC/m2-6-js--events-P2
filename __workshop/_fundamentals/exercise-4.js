@@ -19,10 +19,20 @@ const people = [
 
 function olderPeople(peopleArr, age) {
   // return something
+  let l = [];
+  peopleArr.forEach(element => {
+    if(element.hasOwnProperty("name") && element.hasOwnProperty("age")){    // if the element contains the key
+      const {name:name_p, age:age_p} = element;   // rename because of the overlap of naming
+      if(age_p>age){
+        l.push(element);
+      }
+    }
+  });
+  return l;
 }
 
 // 2. Do a console.log to verify your function.
-
+//console.log(olderPeople(people, 30));
 // 3. Run the test to validate: yarn test exercise-4
 
 module.exports = { olderPeople, people };
